@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "sqlite-async": "^1.1.2"
+  },
+  "name": "didlyback",
+  "version": "1.0.0",
+  "main": "index.mjs",
+  "source": "index.mjs",
+  "devDependencies": {
+    "parcel": "^2.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "author": "Richet Shanon",
+  "license": "ISC",
+  "description": ""
+}
