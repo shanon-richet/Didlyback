@@ -9,11 +9,10 @@ async function getAllEvents() {
     );
 
     const del = await db.run('DELETE FROM events WHERE name_event=?', [
-      'My sweet 16'
+      "New Year"
     ]);
-  
-    console.log(events)
 
+    console.log(events)
     db.close();
     return del;
 }

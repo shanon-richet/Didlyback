@@ -1,20 +1,16 @@
 {
-  "dependencies": {
-    "sqlite-async": "^1.1.2"
-  },
   "name": "didlyback",
-  "version": "1.0.0",
-  "main": "index.mjs",
-  "source": "index.mjs",
-  "devDependencies": {
-    "parcel": "^2.0.1"
-  },
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel",
-    "build": "parcel build"
+    "start": "node ./bin/www"
   },
-  "author": "Richet Shanon",
-  "license": "ISC",
-  "description": ""
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1"
+  }
 }

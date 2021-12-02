@@ -464,15 +464,13 @@ var _sqliteAsync = require("sqlite-async");
 var _sqliteAsyncDefault = parcelHelpers.interopDefault(_sqliteAsync);
 async function getAllEvents() {
     const db = await _sqliteAsyncDefault.default.open('./db/database');
-    const allEvents = await db.all('SELECT * from dates;');
-    console.log(allEvents);
-    const attendees = await db.all('SELECT * from attendees;');
     const events = await db.all('SELECT * from events;');
+    const del = await db.run('DELETE FROM events WHERE name_event=?', [
+        "New Year"
+    ]);
     console.log(events);
-    console.log(allEvents);
-    console.log(attendees);
     db.close();
-    return allEvents;
+    return del;
 }
 getAllEvents();
 
@@ -1462,8 +1460,8 @@ var binding = require(binding_path);
 module.exports = exports = binding;
 
 },{"node-pre-gyp":"boXtn","path":"dTeSu"}],"boXtn":[function(require,module,exports) {
-var process = require("process");
 var __dirname = "node_modules/node-pre-gyp/lib";
+var process = require("process");
 "use strict";
 /**
  * Module exports.
@@ -3520,8 +3518,8 @@ module.exports = function inherits(ctor, superCtor) {
 };
 
 },{}],"cOmIG":[function(require,module,exports) {
-var process = require("process");
 var global = arguments[3];
+var process = require("process");
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -10009,8 +10007,8 @@ exports.Transform = require('./lib/_stream_transform.js');
 exports.PassThrough = require('./lib/_stream_passthrough.js');
 
 },{"./lib/_stream_readable.js":"lUe9z","./lib/_stream_writable.js":"k8dSD","./lib/_stream_duplex.js":"8XkxS","./lib/_stream_transform.js":"lDiiK","./lib/_stream_passthrough.js":"gj76M"}],"lUe9z":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
