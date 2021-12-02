@@ -460,19 +460,21 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"bbffV":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-// Import the SQLite module
 var _sqliteAsync = require("sqlite-async");
 var _sqliteAsyncDefault = parcelHelpers.interopDefault(_sqliteAsync);
-async function getEmployeeByName(name) {
-    const db = await _sqliteAsyncDefault.default.open("./db/database");
-    const employee = await db.get("SELECT * FROM employees WHERE first_name=?", [
-        name, 
-    ]);
-    console.log(employee);
+async function getAllEvents() {
+    const db = await _sqliteAsyncDefault.default.open('./db/database');
+    const allEvents = await db.all('SELECT * from dates;');
+    console.log(allEvents);
+    const attendees = await db.all('SELECT * from attendees;');
+    const events = await db.all('SELECT * from events;');
+    console.log(events);
+    console.log(allEvents);
+    console.log(attendees);
     db.close();
-    return employee;
+    return allEvents;
 }
-getEmployeeByName();
+getAllEvents();
 
 },{"sqlite-async":"ddGz7","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ddGz7":[function(require,module,exports) {
 /**
@@ -3518,8 +3520,8 @@ module.exports = function inherits(ctor, superCtor) {
 };
 
 },{}],"cOmIG":[function(require,module,exports) {
-var global = arguments[3];
 var process = require("process");
+var global = arguments[3];
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
